@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html ng-app="ngBoilerplate" ng-controller="AppCtrl">
+  <head>
+    <title ng-bind="pageTitle"></title>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- font awesome from BootstrapCDN -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
+    <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
+
+    <!-- compiled JavaScript --><% scripts.forEach( function ( file ) { %>
+    <script type="text/javascript" src="<%= file %>"></script><% }); %>
+
+    <!-- it's stupid to have to load it here, but this is for the +1 button -->
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+      { "parsetags": "explicit" }
+    </script>
+  </head>
+  <body>
+  <div id="mainContainer" class="container">
+      <div class="row clearfixed">
+          <div class="col-md-12 column">
+              <div class="row clearfixed">
+                  <!-- HEADER OF THE PAGE -->
+                  <div class="col-md-12 column roundBorders header">
+                      <div class="roundedBorders">
+                          <div class="row clearfix">
+                              <div class="col-md-10">
+                                  <h4>Campeonato Taekwondo San Carlos</h4>
+                              </div>
+                              <div class="col-md-2">
+                                  <h4 id="version">v 1.0</h4>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- END OF HEADER OF THE PAGE -->
+              </div>
+              <!-- MIDDLE AREA THAT DISPLAYS THE NAV BAR AND THE UI TEMPLATE AREA -->
+              <div class="row clearfixed">
+                  <!-- Column for the nav bar -->
+                  <div class="col-md-4 column">
+                      <div class="roundedBorders">
+                          <!--NAVIGATION BAR-->
+                          <div class="panel-group" id="accordion">
+                              <div class="panel panel-default">
+                                  <div class="panel-heading">
+                                      <h4 class="panel-title">
+                                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                              <i class="fa fa-home"></i>
+                                              Inicio
+                                          </a>
+                                      </h4>
+                                  </div>
+                                  <div id="collapseOne" class="panel-collapse collapse">
+                                      <div class="panel-body">
+                                          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="panel panel-default">
+                                  <div class="panel-heading">
+                                      <h4 class="panel-title">
+                                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                              <i class="fa fa-trophy"></i>
+                                              Torneos
+                                          </a>
+                                      </h4>
+                                  </div>
+                                  <div id="collapseTwo" class="panel-collapse collapse">
+                                      <div class="panel-body">
+                                          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="panel panel-default">
+                                  <div class="panel-heading">
+                                      <h4 class="panel-title">
+                                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                              <i class="fa fa-sitemap"></i>
+                                              Llaves
+                                          </a>
+                                      </h4>
+                                  </div>
+                                  <div id="collapseThree" class="panel-collapse collapse">
+                                      <div class="panel-body">
+                                          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="panel panel-default">
+                                  <div class="panel-heading">
+                                      <h4 class="panel-title">
+                                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                                              <i class="fa fa-users"></i>
+                                              Atletas
+                                          </a>
+                                      </h4>
+                                  </div>
+                                  <div id="collapseFour" class="panel-collapse collapse">
+                                      <div class="panel-body">
+                                          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="panel panel-default">
+                                  <div class="panel-heading">
+                                      <h4 class="panel-title">
+                                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+                                              <i class="fa fa-cloud-upload"></i>
+                                              Importar Inscripciones
+                                          </a>
+                                      </h4>
+                                  </div>
+                                  <div id="collapseFive" class="panel-collapse collapse">
+                                      <div class="panel-body">
+                                          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                      </div>
+                                  </div>
+                                  </div>
+                                  <div class="panel panel-default">
+                                      <div class="panel-heading">
+                                          <h4 class="panel-title">
+                                              <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
+                                                  <i class="fa fa-info-circle"></i>
+                                                  Acerca de...
+                                              </a>
+                                          </h4>
+                                      </div>
+                                      <div id="collapseSix" class="panel-collapse collapse">
+                                          <div class="panel-body">
+                                              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                          </div>
+                                      </div>
+                              </div>
+                          </div>
+                          <!--END OF NAVIGATION BAR-->
+                      </div>
+                  </div>
+                  <!-- AREA TO DISPLAY UI TEMPLATES -->
+                  <div class="col-md-8 column roundBorders">
+                      <div class="roundedBorders">
+                          Area de brackets
+                      </div>
+                  </div>
+                  <!-- END OF THE UI TEMPLATE AREAS -->
+              </div>
+              <!-- END OF MIDDLE AREA THAT DISPLAYS THE NAV BAR AND THE UI TEMPLATE AREA -->
+              <!-- AREA TO DISPLAY THE FOOTER -->
+              <div class="row clearfixed">
+                  <div class="col-md-12 column roundBorders footer">
+                      <div class="roundedBorders">
+                          footer of the page
+                      </div>
+                  </div>
+              </div>
+              <!-- END OF AREA TO DISPLAY THE FOOTER -->
+          </div>
+      </div>
+  </div>
+  </body>
+</html>
