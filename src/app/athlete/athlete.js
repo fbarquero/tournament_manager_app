@@ -1,4 +1,7 @@
 /**
+ * Created by it on 6/23/2014.
+ */
+/**
  * Each section of the site has its own module. It probably also has
  * submodules, though this boilerplate is too simple to demonstrate it. Within
  * `src/app/home`, however, could exist several additional folders representing
@@ -12,8 +15,8 @@
  * The dependencies block here is also where component dependencies should be
  * specified, as shown below.
  */
-angular.module( 'ngBoilerplate.home', [
-  'ui.router'
+angular.module( 'ngBoilerplate.athlete', [
+    'ui.router'
 ])
 
 /**
@@ -21,24 +24,24 @@ angular.module( 'ngBoilerplate.home', [
  * will handle ensuring they are all available at run-time, but splitting it
  * this way makes each module more "self-contained".
  */
-.config(function config( $stateProvider ) {
-  $stateProvider.state( 'home', {
-    url: '/home',
-    views: {
-      "main": {
-        controller: 'HomeCtrl',
-        templateUrl: 'home/home.tpl.html'
-      }
-    },
-    data:{ pageTitle: 'Home' }
-  });
-})
+    .config(function config( $stateProvider ) {
+        $stateProvider.state( 'athlete', {
+            url: '/athlete',
+            views: {
+                "main": {
+                    controller: 'AthleteCtrl',
+                    templateUrl: 'athlete/athlete.tpl.html'
+                }
+            },
+            data:{ pageTitle: 'Athlete' }
+        });
+    })
 
 /**
  * And of course we define a controller for our route.
  */
-.controller( 'HomeCtrl', function HomeController( $scope ) {
-})
+    .controller( 'AthleteCtrl', function AthleteController( $scope ) {
+    })
 
 ;
 
