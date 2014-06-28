@@ -16,7 +16,7 @@
  * specified, as shown below.
  */
 angular.module( 'ngBoilerplate.athlete', [
-    'ui.router'
+    'ui.router', 'ngTable'
 ])
 
 /**
@@ -24,7 +24,7 @@ angular.module( 'ngBoilerplate.athlete', [
  * will handle ensuring they are all available at run-time, but splitting it
  * this way makes each module more "self-contained".
  */
-    .config(function config( $stateProvider ) {
+    .config(function config( $stateProvider, $httpProvider ) {
         $stateProvider.state( 'athlete', {
             url: '/athlete',
             views: {
@@ -35,29 +35,49 @@ angular.module( 'ngBoilerplate.athlete', [
             },
             data:{ pageTitle: 'Athlete' }
         });
+
+        $httpProvider.defaults.useXDomain = true;
+        //Remove the header used to identify ajax call  that would prevent CORS from working
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+        $httpProvider.defaults.headers.post["Content-Type"] = "application/json";
+        //delete $http.defaults.headers.common['X-Requested-With'];
     })
 
 /**
  * And of course we define a controller for our route.
  */
-    .controller( 'AthleteCtrl', function AthleteController( $scope, $http ) {
+    .controller( 'AthleteCtrl',function AthleteController( $scope, $http, ngTableParams, $filter ) {
+        var data = [
+        ];
+        $scope.data = data;
 
-        $http({method: 'GET', url: '/someUrl'}).
-            success(function(data, status, headers, config) {
-                // this callback will be called asynchronously
-                // when the response is available
-            }).
-            error(function(data, status, headers, config) {
-                // called asynchronously if an error occurs
-                // or server returns response with an error status.
-            });
+        $scope.tableParams = new ngTableParams({
+            page: 1,            // show first page
+            count: 10,          // count per page
+            filter: {
+                //name: 'M'       // initial filter
+            },
+            sorting: {
+                //name: 'asc'     // initial sorting
+            }
+        }, {
+            total: data.length, // length of data
+            getData: function ($defer, params) {
+                // use build-in angular filter
+                var filteredData = params.filter() ?
+                    $filter('filter')(data, params.filter()) :
+                    data;
+                var orderedData = params.sorting() ?
+                    $filter('orderBy')(filteredData, params.orderBy()) :
+                    data;
 
-        $scope.getAthlete = function(){
-            alert($scope.nombre);
+                params.total(orderedData.length); // set total for recalc pagination
+                $defer.resolve(orderedData.slice((params.page() - 1) * params.count(), params.page() * params.count()));
+            }
+        });
+
+        $scope.changeSelection = function(user) {
+            // console.info(user);
         };
-
-        $scope.nombre = 'juan';
-    })
-
-;
+    });
 

@@ -1,0 +1,11 @@
+<div class="container" ng-controller="ImportAthleteCtrl as import">
+    <div class="container">
+        <h1>Seleccione un archivo de inscripcion:</h1>
+        <input type="file" on-read-file="showContent($fileContent)" />
+        <div>
+            <h2>File content is:</h2>
+            <pre id="previeFileContet">{{ content }}</pre>
+        </div>
+        <button ng-click="uploadInfo()">Upload Info!!</button>
+    </div>
+</div>

@@ -68,6 +68,7 @@ module.exports = {
       'vendor/angular-ui-router/release/angular-ui-router.js',
       'vendor/angular-ui-utils/modules/route/route.js',
       'vendor/jquery/dist/jquery.js',
+      'vendor/ng-table/ng-table.js',
       'vendor/bootstrap/dist/js/bootstrap.js'
     ],
     css: [

@@ -1,5 +1,34 @@
-<div class="container">
-    <img class="imgEmptySection" src="./assets/img/tkd_athletes.png">
-    <input ng-model="nombre"/>
-    <button ng-click="getAthlete()">Click me!</button>
+<div class="container" ng-controller="AthleteCtrl as athlete">
+
+    <div>
+        <div>
+            <strong>Selected users:</strong> {{ data | filter:{"$selected": true} }}
+        </div>
+        <button class="btn btn-default" ng-click="tableParams.data[1].$selected = true">Select second row</button>
+
+        <table ng-table="tableParams" show-filter="true" class="table ng-table-rowselected">
+            <tr ng-repeat="user in $data"
+                ng-click="user.$selected = !user.$selected; changeSelection(user)"
+                ng-class="{'active': user.$selected}">
+                <td data-title="'Name'" sortable="'name'" filter="{ 'name': 'text' }">
+                    {{user.name}}
+                </td>
+                <td data-title="'Age'" sortable="'age'" filter="{ 'age': 'text' }">
+                    {{user.age}}
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!--
+    <div>
+        <p><strong><h4>Atletas:</h4></strong></p>
+
+       <table ng-table="tableParams" class="table">
+            <tr ng-repeat="user in $data">
+                <td data-title="'Name'">{{user.name}}</td>
+                <td data-title="'Age'">{{user.age}}</td>
+            </tr>
+        </table>
+    </div>
+    -->
 </div>

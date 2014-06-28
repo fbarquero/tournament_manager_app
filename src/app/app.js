@@ -4,11 +4,12 @@ angular.module( 'ngBoilerplate', [
   'ngBoilerplate.home',
   'ngBoilerplate.about',
   'ngBoilerplate.athlete',
+  'ngBoilerplate.importAthlete',
   'ui.router'
 ])
 
 .config( function myAppConfig ( $stateProvider, $urlRouterProvider ) {
-  $urlRouterProvider.otherwise( '/athlete' );
+  $urlRouterProvider.otherwise( '/importAthlete' );
 })
 
 .run( function run () {
